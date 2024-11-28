@@ -1,14 +1,9 @@
-library(readxl)
-library(ggplot2)
-
-# This reads in our excel spreadsheet from arran
-SouthInvert <- read_excel("ArranExcel.xlsx",sheet="South side invert transects")
-
-
-# I had to get help from stack overflow for reording order and individual counts
+# Plot the South side invertebrate abundance with consistent colors
 ggplot(SouthInvert, aes(x = reorder(order, -individualCount), y = as.numeric(individualCount), fill = order)) +
-  geom_bar(stat = "identity") +
-  labs(title = "Species Abundance in South Side Transects",
+  geom_bar(stat = "identity", colour = 'black') + 
+  scale_fill_manual(values = order_colors) +  # Use consistent color mapping from the North plot
+  labs(
+    title = "Order Abundance in South Site Transects",
     x = "Invertebrate Order",
     y = "Individual Counts",
     fill = "Order"
