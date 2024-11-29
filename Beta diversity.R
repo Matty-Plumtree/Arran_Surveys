@@ -5,8 +5,8 @@ jaccard <- function(a, b) {
   return (intersection/union)
 }
 # Calculate unique orders for each site
-unique_orders <- unique(SouthInvert$order)
-unique_orders1 <- unique(NorthInvert$order)
+unique_orders <- unique(SouthInvert$scientificName)
+unique_orders1 <- unique(NorthInvert$scientificName)
 
 # Create vectors for unique orders
 a <- c(unique_orders)
@@ -23,8 +23,8 @@ sorenson <- function(a, b) {
 }
 
 # Calculate unique orders for each site
-unique_orders <- unique(SouthInvert$order)  
-unique_orders1 <- unique(NorthInvert$order) 
+unique_orders <- unique(SouthInvert$scientificName)  
+unique_orders1 <- unique(NorthInvert$scientificName) 
 
 # Create vectors for unique orders
 a <- c(unique_orders)
